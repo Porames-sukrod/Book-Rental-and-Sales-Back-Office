@@ -1,0 +1,10 @@
+{
+  "books": [],
+  "customers": [],
+  "rentals": [],
+  "nextId": {
+    "books": 5,
+    "customers": 1,
+    "rentals": 1
+  }
+}
