@@ -22,13 +22,12 @@ const Layout: React.FC = () => {
       default:
         return (
           <div className="dashboard-container">
-            <h1 className="dashboard-title">สรุปภาพรวมร้านเช่าหนังสือ</h1>
+            <h1 className="dashboard-title">ฟังก์ที่มี</h1>
             <p className="dashboard-subtitle">
-              ดูข้อมูลสำคัญและจัดการการทำงานในที่เดียว
+              ดูข้อมูลสำคัญและจัดการการทำงานได้ในที่เดียว
             </p>
 
             <div className="quick-actions-container">
-              <h2 className="section-title">การดำเนินการด่วน</h2>
               <div className="quick-actions-grid">
                 <button
                   className="action-card action-card-books"
@@ -103,7 +102,7 @@ const Layout: React.FC = () => {
             <div className="logo-icon">
               <Book size={24} />
             </div>
-            Book Rental
+            Book Store Admin
           </a>
           <div className="nav-tabs">
             <button
