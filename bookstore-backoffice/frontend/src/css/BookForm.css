@@ -1,0 +1,74 @@
+/* BookForm.css */
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.book-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.book-form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #374151;
+}
+
+/* ... เพิ่มสไตล์ที่เหลือที่นี่ ... */
+.book-form-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.book-form-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: white;
+}
+
+.book-form-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.book-form-button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.book-form-primary-button {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.book-form-primary-button:disabled {
+    opacity: 0.5;
+}
+
+.book-form-secondary-button {
+  padding: 10px 16px;
+  background-color: transparent;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}

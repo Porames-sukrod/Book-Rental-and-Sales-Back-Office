@@ -1,22 +1,21 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import BookList from "./components/BookList";
+import Layout from "./components/Layout";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+      staleTime: 5 * 60 * 1000,
+    },
+  },
+});
 
 function App() {
-  const appStyles = {
-    minHeight: "100vh",
-    backgroundColor: "#f9fafb",
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
-      <div style={appStyles}>
-        <BookList />
-      </div>
+      <Layout />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

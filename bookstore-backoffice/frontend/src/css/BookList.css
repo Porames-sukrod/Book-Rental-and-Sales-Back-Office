@@ -1,0 +1,151 @@
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 20px;
+}
+
+.error-state {
+  color: #dc2626;
+}
+
+.booklist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.booklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.booklist-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.booklist-add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.booklist-add-button:hover {
+  background-color: #2563eb;
+}
+
+.booklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.book-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.book-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.book-status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.book-card-info {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.book-button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.book-edit-button,
+.book-delete-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.book-edit-button {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.book-edit-button:hover {
+  background-color: #e5e7eb;
+}
+
+.book-delete-button {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.book-delete-button:hover {
+  background-color: #fecaca;
+}
+
+.booklist-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.booklist-add-title,
+.booklist-edit-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.booklist-empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
