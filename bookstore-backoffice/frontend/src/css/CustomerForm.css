@@ -1,0 +1,86 @@
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customer-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.customer-form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #374151;
+}
+
+.customer-form-input,
+.customer-form-textarea {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.customer-form-input:focus,
+.customer-form-textarea:focus {
+  border-color: #10b981;
+}
+
+.customer-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.customer-form-required {
+  color: #dc2626;
+  margin-left: 4px;
+}
+
+.customer-form-button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.customer-form-primary-button {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.customer-form-primary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #9ca3af;
+}
+
+.customer-form-primary-button:not(:disabled):hover {
+  background-color: #059669;
+}
+
+.customer-form-secondary-button {
+  padding: 10px 16px;
+  background-color: transparent;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.customer-form-secondary-button:hover {
+  background-color: #f3f4f6;
+}

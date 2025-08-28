@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCreateBook, useUpdateBook, type Book } from "../hooks/api";
+import "../css/BookForm.css";
 
 interface BookFormProps {
   book?: Book;
@@ -49,109 +50,46 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
     }));
   };
 
-  const styles = {
-    form: {
-      display: "flex",
-      flexDirection: "column" as const,
-      gap: "16px",
-      maxWidth: "600px",
-      margin: "0 auto",
-    },
-    field: {
-      display: "flex",
-      flexDirection: "column" as const,
-      gap: "4px",
-    },
-    label: {
-      fontSize: "14px",
-      fontWeight: "bold" as const,
-      color: "#374151",
-    },
-    input: {
-      padding: "8px 12px",
-      border: "1px solid #d1d5db",
-      borderRadius: "6px",
-      fontSize: "14px",
-      outline: "none",
-    },
-    select: {
-      padding: "8px 12px",
-      border: "1px solid #d1d5db",
-      borderRadius: "6px",
-      fontSize: "14px",
-      outline: "none",
-      backgroundColor: "white",
-    },
-    gridContainer: {
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: "16px",
-    },
-    buttonContainer: {
-      display: "flex",
-      gap: "8px",
-    },
-    primaryButton: {
-      flex: 1,
-      padding: "10px 16px",
-      backgroundColor: "#3b82f6",
-      color: "white",
-      border: "none",
-      borderRadius: "6px",
-      fontSize: "14px",
-      cursor: "pointer",
-    },
-    secondaryButton: {
-      padding: "10px 16px",
-      backgroundColor: "transparent",
-      color: "#374151",
-      border: "1px solid #d1d5db",
-      borderRadius: "6px",
-      fontSize: "14px",
-      cursor: "pointer",
-    },
-  };
-
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
-      <div style={styles.field}>
-        <label style={styles.label}>ชื่อหนังสือ</label>
+    <form onSubmit={handleSubmit} className="book-form">
+      <div className="book-form-field">
+        <label className="book-form-label">ชื่อหนังสือ</label>
         <input
           type="text"
           name="title"
           value={formData.title}
           onChange={handleChange}
           required
-          style={styles.input}
+          className="book-form-input"
         />
       </div>
 
-      <div style={styles.field}>
-        <label style={styles.label}>ผู้แต่ง</label>
+      <div className="book-form-field">
+        <label className="book-form-label">ผู้แต่ง</label>
         <input
           type="text"
           name="author"
           value={formData.author}
           onChange={handleChange}
           required
-          style={styles.input}
+          className="book-form-input"
         />
       </div>
 
-      <div style={styles.field}>
-        <label style={styles.label}>ISBN</label>
+      <div className="book-form-field">
+        <label className="book-form-label">ISBN</label>
         <input
           type="text"
           name="isbn"
           value={formData.isbn}
           onChange={handleChange}
-          style={styles.input}
+          className="book-form-input"
         />
       </div>
 
-      <div style={styles.gridContainer}>
-        <div style={styles.field}>
-          <label style={styles.label}>ราคาขาย (บาท)</label>
+      <div className="book-form-grid-container">
+        <div className="book-form-field">
+          <label className="book-form-label">ราคาขาย (บาท)</label>
           <input
             type="number"
             name="price_buy"
@@ -160,12 +98,12 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
             required
             min="0"
             step="0.01"
-            style={styles.input}
+            className="book-form-input"
           />
         </div>
 
-        <div style={styles.field}>
-          <label style={styles.label}>ราคาเช่า (บาท)</label>
+        <div className="book-form-field">
+          <label className="book-form-label">ราคาเช่า (บาท)</label>
           <input
             type="number"
             name="price_rent"
@@ -174,13 +112,13 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
             required
             min="0"
             step="0.01"
-            style={styles.input}
+            className="book-form-input"
           />
         </div>
       </div>
 
-      <div style={styles.field}>
-        <label style={styles.label}>จำนวนสต็อก</label>
+      <div className="book-form-field">
+        <label className="book-form-label">จำนวนสต็อก</label>
         <input
           type="number"
           name="stock"
@@ -188,17 +126,17 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
           onChange={handleChange}
           required
           min="0"
-          style={styles.input}
+          className="book-form-input"
         />
       </div>
 
-      <div style={styles.field}>
-        <label style={styles.label}>สถานะ</label>
+      <div className="book-form-field">
+        <label className="book-form-label">สถานะ</label>
         <select
           name="status"
           value={formData.status}
           onChange={handleChange}
-          style={styles.select}
+          className="book-form-select"
         >
           <option value="available">พร้อมจำหน่าย</option>
           <option value="rented">ให้เช่าแล้ว</option>
@@ -206,15 +144,11 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
         </select>
       </div>
 
-      <div style={styles.buttonContainer}>
+      <div className="book-form-button-container">
         <button
           type="submit"
           disabled={createMutation.isPending || updateMutation.isPending}
-          style={{
-            ...styles.primaryButton,
-            opacity:
-              createMutation.isPending || updateMutation.isPending ? 0.5 : 1,
-          }}
+          className="book-form-primary-button"
         >
           {createMutation.isPending || updateMutation.isPending
             ? "กำลังบันทึก..."
@@ -227,7 +161,7 @@ const BookForm: React.FC<BookFormProps> = ({ book, onSuccess, onCancel }) => {
           <button
             type="button"
             onClick={onCancel}
-            style={styles.secondaryButton}
+            className="book-form-secondary-button"
           >
             ยกเลิก
           </button>

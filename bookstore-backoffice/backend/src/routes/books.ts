@@ -1,16 +1,14 @@
 import { Hono } from 'hono';
-import db from '../db/jsonDB'; // เปลี่ยนจาก '../db/schema'
-import type { Book } from '../types';
+import db from '../db/jsonDB'; 
+import type { Book } from '../types/indextypes';
 
 const books = new Hono();
 
-// ดูหนังสือทั้งหมด
 books.get('/', (c) => {
   const result = db.getAllBooks();
   return c.json(result);
 });
 
-// ดูหนังสือตาม ID
 books.get('/:id', (c) => {
   const id = parseInt(c.req.param('id'));
   const result = db.getBookById(id);
@@ -22,7 +20,6 @@ books.get('/:id', (c) => {
   return c.json(result);
 });
 
-// เพิ่มหนังสือใหม่
 books.post('/', async (c) => {
   try {
     const body = await c.req.json<Omit<Book, 'id' | 'created_at'>>();
@@ -49,7 +46,7 @@ books.post('/', async (c) => {
   }
 });
 
-// แก้ไขหนังสือ
+
 books.put('/:id', async (c) => {
   try {
     const id = parseInt(c.req.param('id'));
@@ -68,7 +65,6 @@ books.put('/:id', async (c) => {
   }
 });
 
-// ลบหนังสือ
 books.delete('/:id', (c) => {
   try {
     const id = parseInt(c.req.param('id'));

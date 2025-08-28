@@ -29,3 +29,27 @@ export interface Rental {
   status: 'active' | 'returned' | 'overdue';
   created_at?: string;
 }
+
+export interface RentalWithDetails extends Rental {
+  book_title: string;
+  book_author: string;
+  book_price_rent: number;
+  customer_name: string;
+  customer_phone: string;
+  days_rented?: number;
+  is_overdue?: boolean;
+}
+
+export interface RentalRequest {
+  book_id: number;
+  customer_id: number;
+  rental_days: number;
+}
+
+export interface RentalStats {
+  total_rentals: number;
+  active_rentals: number;
+  overdue_rentals: number;
+  returned_rentals: number;
+  total_revenue: number;
+}
