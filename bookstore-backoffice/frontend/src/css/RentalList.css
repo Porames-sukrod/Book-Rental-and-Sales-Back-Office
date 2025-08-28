@@ -1,33 +1,34 @@
-.loading-state,
-.error-state {
-  text-align: center;
-  padding: 20px;
-}
-
-.error-state {
-  color: #dc2626;
-}
-
-.rental-list-container {
+.container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.rental-list-header {
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.error {
+  color: #dc2626;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
 }
 
-.rental-list-title {
+.title {
   font-size: 28px;
   font-weight: bold;
   color: #1f2937;
 }
 
-.rental-list-add-button {
+.addButton {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -40,19 +41,18 @@
   font-size: 14px;
   transition: background-color 0.2s;
 }
-
-.rental-list-add-button:hover {
+.addButton:hover {
   background-color: #6d28d9;
 }
 
-.stats-grid {
+.statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
 
-.stat-card {
+.statCard {
   background-color: white;
   padding: 16px;
   border-radius: 8px;
@@ -60,40 +60,36 @@
   border: 1px solid #e5e7eb;
 }
 
-.stat-value {
+.statValue {
   font-size: 24px;
   font-weight: bold;
   margin: 8px 0 4px 0;
 }
-
-.stat-value.total-rentals {
-  color: #4f46e5;
+.statValue.blue {
+  color: #3b82f6;
 }
-
-.stat-value.active-rentals {
-  color: #b45309;
-}
-
-.stat-value.overdue-rentals {
-  color: #dc2626;
-}
-
-.stat-value.total-revenue {
+.statValue.green {
   color: #10b981;
 }
+.statValue.red {
+  color: #dc2626;
+}
+.statValue.emerald {
+  color: #059669;
+}
 
-.stat-label {
+.statLabel {
   font-size: 14px;
   color: #6b7280;
 }
 
-.rental-list-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 16px;
 }
 
-.rental-card {
+.card {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -101,20 +97,19 @@
   border: 1px solid #e5e7eb;
   transition: all 0.2s;
 }
-
-.rental-card:hover {
+.card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.rental-card-header {
+.cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 16px;
 }
 
-.rental-book-title {
+.bookTitle {
   font-size: 18px;
   font-weight: bold;
   color: #1f2937;
@@ -122,37 +117,34 @@
   line-height: 1.4;
 }
 
-.rental-status-badge {
+.statusBadge {
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
 }
-
-.rental-status-badge.rented {
-  background-color: #fef3c7;
-  color: #b45309;
-}
-
-.rental-status-badge.returned {
+.statusBadge.active {
   background-color: #dcfce7;
   color: #15803d;
 }
-
-.rental-status-badge.overdue {
+.statusBadge.returned {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.statusBadge.overdue {
   background-color: #fee2e2;
   color: #dc2626;
 }
 
-.rental-info-section {
+.infoSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 16px;
 }
 
-.rental-info-item {
+.infoItem {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -160,13 +152,16 @@
   color: #6b7280;
 }
 
-.rental-info-icon {
+.icon {
   width: 16px;
   height: 16px;
   color: #9ca3af;
 }
+.icon.green {
+  color: #10b981;
+}
 
-.rental-overdue-warning {
+.overdueWarning {
   background-color: #fef2f2;
   color: #dc2626;
   padding: 8px 12px;
@@ -179,13 +174,23 @@
   gap: 6px;
 }
 
-.rental-button-group {
+.rentalPrice {
+  font-weight: bold;
+  color: #374151;
+  margin: 10px 0;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+}
+.totalPrice {
+  color: #059669;
+}
+
+.buttonGroup {
   display: flex;
   gap: 8px;
 }
 
-.rental-return-button,
-.rental-delete-button {
+.button {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -197,38 +202,34 @@
   font-weight: bold;
   transition: all 0.2s;
 }
-
-.rental-return-button {
-  background-color: #10b981;
-  color: white;
-}
-
-.rental-return-button:hover {
-  background-color: #059669;
-}
-
-.rental-delete-button {
-  background-color: #fee2e2;
-  color: #dc2626;
-}
-
-.rental-delete-button:hover {
-  background-color: #fecaca;
-}
-
-.rental-return-button:disabled,
-.rental-delete-button:disabled {
+.button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.rental-list-empty-state {
+.returnButton {
+  background-color: #10b981;
+  color: white;
+}
+.returnButton:hover:not(.disabled) {
+  background-color: #059669;
+}
+
+.deleteButton {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+.deleteButton:hover:not(.disabled) {
+  background-color: #fecaca;
+}
+
+.emptyState {
   text-align: center;
   padding: 40px;
   color: #6b7280;
 }
 
-.rental-list-back-button {
+.backButton {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -242,7 +243,7 @@
   margin-bottom: 16px;
 }
 
-.rental-list-add-title {
+.formTitle {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
